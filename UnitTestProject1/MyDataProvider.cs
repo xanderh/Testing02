@@ -28,7 +28,7 @@ namespace UnitTestProject1
 
         public ICollection<Person> GetPeople()
         {
-            throw new NotImplementedException();
+            return people;
         }
 
         public void SavePayment(Payment pmnt)
