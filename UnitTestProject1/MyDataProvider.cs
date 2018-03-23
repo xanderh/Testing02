@@ -9,6 +9,7 @@ namespace UnitTestProject1
 {
     class MyDataProvider : IDataProvider
     {
+        List<Payment> payments = new List<Payment>();
         List<Person> people = new List<Person>();
         public int CountPeople()
         {
@@ -23,7 +24,7 @@ namespace UnitTestProject1
 
         public ICollection<Payment> GetPaymentsFromPerson(Person pers)
         {
-            throw new NotImplementedException();
+            return payments.FindAll((Payment)=> Payment.Id == pers.Id);
         }
 
         public ICollection<Person> GetPeople()
@@ -33,7 +34,7 @@ namespace UnitTestProject1
 
         public void SavePayment(Payment pmnt)
         {
-            throw new NotImplementedException();
+            payments.Add(pmnt);
         }
 
         public void SavePerson(Person pers)
